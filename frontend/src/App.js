@@ -7,17 +7,21 @@ function App() {
 
   useEffect(() => {
     axios.get("http://localhost:5000/test").then((response) => {
+      console.log(response.data);
       setRes(response.data);
     });
   }, []);
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>{res}</p>
-      </header>
-    </div>
-  );
+  if (res) {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p>{res[0].Title}</p>
+          <p>{res[0].Copy}</p>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
