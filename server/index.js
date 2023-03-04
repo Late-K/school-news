@@ -21,10 +21,16 @@ app.get("/", (req, res) => {
 });
 
 app.get("/test", (req, res) => {
-  connection.query("select * from articles", function (error, results) {
-    console.log("query response is ", results);
-    res.send(results);
-  });
+  res.send("Testing");
+});
+
+app.get("/getAllArticles", (req, res) => {
+  connection.query(
+    "SELECT articles.ID, Title, Copy, Image, UploadDateTime, LastName, FirstName, Email FROM `school-news`.articles inner join authors on articles.AuthorID = authors.ID;",
+    function (error, results) {
+      res.send(results);
+    }
+  );
 });
 
 app.listen(port, () => {
