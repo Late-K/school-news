@@ -9,8 +9,6 @@ function Search(props) {
 
   function oldestPressed() {
     let sortedArray = props.articles.sort(function (a, b) {
-      // Turn your strings into dates, and then subtract them
-      // to get a value that is either negative, positive, or zero.
       return new Date(a.UploadDateTime) - new Date(b.UploadDateTime);
     });
     props.setArticles(sortedArray);
