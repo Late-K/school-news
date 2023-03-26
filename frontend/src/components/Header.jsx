@@ -1,15 +1,18 @@
 import React from "react";
+import "../App.css";
 
 function Header() {
   return (
-    <div>
-      <h1>Thomas Tallis</h1>{" "}
+    <div className="header-container">
       <img
-        style={{ width: "100px" }}
+        class="header-image"
+        style={{ width: "120px" }}
         src={process.env.PUBLIC_URL + "header-logo.png"}
         alt="Header logo"
       ></img>
-      <p>Welcome to the Thomas Tallis student news board!</p>
+      <p className="header-text">
+        {"Welcome to the Thomas Tallis student news board!"}
+      </p>
     </div>
   );
 }

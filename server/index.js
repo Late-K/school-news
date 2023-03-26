@@ -26,7 +26,7 @@ app.get("/test", (req, res) => {
 
 app.get("/getAllArticles", (req, res) => {
   connection.query(
-    "SELECT articles.ID, Title, Copy, Image, UploadDateTime, LastName, FirstName, Email FROM `school-news`.articles inner join authors on articles.AuthorID = authors.ID;",
+    "SELECT articles.ID, Title, Copy, Image, UploadDateTime, LastName, FirstName, Email FROM `school-news`.articles inner join authors on articles.AuthorID = authors.ID order by UploadDateTime desc",
     function (error, results) {
       res.send(results);
     }
