@@ -38,6 +38,17 @@ body {
 .centred-text {
   text-align: center;
 }
+
+.left-text {
+  text-align: left;
+  padding-top: 50px;
+}
+
+.preview-date {
+  display: flex;
+  float: right;
+  padding-right: 15px;
+}
 .header-image {
   float: left;
 }
@@ -82,4 +93,8 @@ h3 {
 
 .filter-container button {
   margin: 10px;
+}
+
+.footer-space {
+  padding: 10px;
 }

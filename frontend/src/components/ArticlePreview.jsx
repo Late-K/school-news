@@ -14,9 +14,21 @@ function ArticlePreview(props) {
   return (
     <div onClick={handleSelected} className="article-preview-container">
       <h3>{props.article.Title}</h3>
+
       <div className="preview-text">
         <p className="italic">{props.article.Copy.slice(0, 100)}...</p>
+
+        <div className="preview-text">
+          <p>
+            By {props.article.FirstName} {props.article.LastName}
+          </p>
+        </div>
+
+        <div className="preview-date">
+          <p>{formattedDate}</p>
+        </div>
       </div>
+
       <div className="preview-img">
         <img
           style={{ width: "200px" }}
@@ -24,7 +36,6 @@ function ArticlePreview(props) {
           alt={"article " + props.article.ID + " image"}
         ></img>
       </div>
-      <p>{formattedDate}</p>
     </div>
   );
 }
